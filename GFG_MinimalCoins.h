@@ -14,25 +14,19 @@ int static int MinCoinNumbers(Vector<Integer> a, S){
 #include <algorithm>
 using namespace std;
 
-
 class MinCoins
 {
 public:
     int MinCoinNumbers(vector<int> a,int S){
         int types = S + 1;
         int res[types];
-        for (int i = 0; i < types; i++)
+        for (int i = 0; i < types; i++){
             res[i] = 0;
-
-        sort(a.begin(), a.end());
-
-        for (int i = 1; i <= S; i++)
-        {
-            int minCoins = i/a[0];
-            for (int j = a.size() - 1; j >= 0; j--)
-            {
-                if(i >= a[j])
-                {
+        }
+        for (int i = 1; i <= S; i++){
+            int minCoins = 0;
+            for (int j = a.size() - 1; j >= 0; j--){
+                if(i >= a[j]){
                     minCoins = min(res[i - a[j]] + 1, minCoins);
                 }
             }
