@@ -5,8 +5,8 @@ for example: coins = {1, 2, 5, 10, 21, 25}
 get the minimal coins for sum of 63
 the result should be 3;
 
-@para Vector a : 硬币的面额， S：要计算的总和。 
-@return : 最少需要的硬币数
+@para Vector a : type of coins, S: sum of coins 
+@return : minimal coins for the input sum
 int static int MinCoinNumbers(Vector<Integer> a, S){
 
 }*/
@@ -19,10 +19,11 @@ class MinCoins
 {
 public:
     int MinCoinNumbers(vector<int> a,int S){
-        int res[100];
-        for (int i = 0; i < 100; i++)
+        int types = S + 1;
+        int res[types];
+        for (int i = 0; i < types; i++)
             res[i] = 0;
-        
+
         sort(a.begin(), a.end());
 
         for (int i = 1; i <= S; i++)
