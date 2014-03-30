@@ -28,6 +28,7 @@ public:
         
         queue<pair<string, int>> q;
         q.push(make_pair(start, 1));
+        dict.erase(start);
 
         while(!q.empty())
         {
