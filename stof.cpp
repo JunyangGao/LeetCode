@@ -6,28 +6,31 @@
 #include <string>
 using namespace std;
 
-//simulate the stof() method
-
-double _stof(string s){
-    double res = 0;
-    if(s.length() > 0)
-    {
-        int round = -1;
-        for (int i = 0; i < s.length(); ++i)
-        {
+float _stof(string s){
+    float res = 0;
+    if(s.length() > 0){
+        int dp= -1;
+        for (int i = 0; i < s.length(); ++i){
             if(s[i] == '.' )
-                round = 0;
-            
+                dp = 0;            
             if(s[i] < '0' || s[i] >'9')
                 continue;
-
-            if(round > -1)
-                round++;
-
+            if(dp > -1)
+                dp++;
             res = res*10 + s[i] - '0';
         }
-        if(round > -1)
-            res = res/pow(10, round);      
+        if(dp > -1)
+            res = res/pow(10, dp);      
     }
     return res;
+}
+
+int ___main(){
+    /*Enter your code here. Read input from STDIN, Print outpt to STDOUT*/
+    string line;
+    getline(cin, line);
+   
+    cout << _stof(line);
+    getchar();
+    return 0;
 }
