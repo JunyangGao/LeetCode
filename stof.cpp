@@ -24,13 +24,3 @@ float _stof(string s){
     }
     return res;
 }
-
-int ___main(){
-    /*Enter your code here. Read input from STDIN, Print outpt to STDOUT*/
-    string line;
-    getline(cin, line);
-   
-    cout << _stof(line);
-    getchar();
-    return 0;
-}
